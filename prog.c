@@ -31,11 +31,11 @@ void *thread_func(void *arg)
         } while( (usecCur - usecStart) < th_args->iPeriod);
 
         */
-       
+
         sleep(th_args->iPeriod);
         pthread_mutex_lock(th_args->Mutex);
         fprintf( th_args->pFile,"I`m %d thread\n", th_args->iNum);
-        printf("I`m %d thread\n", th_args->iNum);
+        //printf("I`m %d thread\n", th_args->iNum);
         pthread_mutex_unlock(th_args->Mutex);
 
     }
