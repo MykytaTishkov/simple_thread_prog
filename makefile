@@ -1,9 +1,12 @@
-prog:
-	gcc prog.c -o $@
+.PHONY: clean
+
+prog: clean
+	gcc prog.c -o $@ -pthread
 
 prog_exec: prog
 	./$^
-	rm $^
+	rm -f $^
 
 clean:
-	rm *.o
+	rm -f *.o
+	rm -f out.txt
